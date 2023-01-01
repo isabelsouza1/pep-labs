@@ -50,7 +50,7 @@ public class QueueExercise {
      * @param item a String that should be added to Queue.
      */
     public void addToEndOfQueue(Queue<String> queue, String item){
-        queue.add(String item);
+        queue.add(item);
     }
 
     /**
@@ -60,7 +60,11 @@ public class QueueExercise {
      * @return the next String due to be removed (polled) from the Queue<String> (the oldest item in the queue.)
      */
     public String removeFromStartOfQueue(Queue<String> queue){
-        return queue.remove();
+        String first = ((ArrayDeque<String>) queue).getFirst();
+        queue.remove();
+        return first;
+        
+        
     }
 
     /**
@@ -69,6 +73,6 @@ public class QueueExercise {
      * @return the next String due to be removed (peeked) from the Queue<String> (the oldest item in the queue.)
      */
     public String getStartOfQueueWithoutRemoving(Queue<String> queue){
-        return queue.element();
+        return ((ArrayDeque<String>) queue).getFirst();
     }
 }
