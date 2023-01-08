@@ -1,0 +1,1 @@
+INSERT INTO song (Title, Artist) VALUES ('Dont Fear the Reaper', 'Blue Oyster Cult');
