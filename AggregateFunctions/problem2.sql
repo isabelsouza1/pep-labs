@@ -1,0 +1,1 @@
+SELECT count(DISTINCT id) FROM employee WHERE last_name = 'Smith';
