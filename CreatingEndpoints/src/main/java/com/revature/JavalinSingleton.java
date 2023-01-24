@@ -16,11 +16,10 @@ public class JavalinSingleton {
         app.start(9000);
         //write endpoint here
         
-        app.get("http://localhost:9000/hello", ctx -> {
-           ctx.result("");
+        app.get("/hello", ctx -> {
+           ctx.result("Hello World");
         });
         
-
         return app;
     }
     
