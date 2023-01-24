@@ -13,12 +13,13 @@ public class JavalinSingleton {
      */
     public static Javalin getInstance(){
         Javalin app = Javalin.create();
-        
-        //write endpoint here
         app.start(9000);
-        app.get("/get-request", ctx -> {
-            ctx.result("Hello World");
+        //write endpoint here
+        
+        app.get("http://localhost:9000/hello", ctx -> {
+           ctx.result("");
         });
+        
 
         return app;
     }
