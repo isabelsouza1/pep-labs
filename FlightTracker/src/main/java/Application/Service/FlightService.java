@@ -46,10 +46,8 @@ public class FlightService {
      *         inform our provide the front-end client with information about the added Flight.
      */
     public Flight addFlight(Flight flight){
-        flightDAO.insertFlight(flight);
-    
-        return flight;
-        
+        return this.flightDAO.insertFlight(flight);
+
     }
 
     /**
@@ -67,12 +65,14 @@ public class FlightService {
     public Flight updateFlight(int flight_id, Flight flight){
         Flight flightFromDb = this.flightDAO.getFlightById(flight_id);
 
-        if(flightFromDb == null) return null; 
+        if(flightFromDb == null) {
+            return null; 
+        }
 
         flightDAO.updateFlight(flight_id, flight);
         return this.flightDAO.getFlightById(flight_id);
     }
-    }
+    
 
     /**
      * TODO: Use the FlightDAO to retrieve a List containing all flights.
