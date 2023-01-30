@@ -3,6 +3,7 @@ package Application.Service;
 import Application.Model.Author;
 import Application.DAO.AuthorDAO;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -40,7 +41,7 @@ public class AuthorService {
      * @return all authors
      */
     public List<Author> getAllAuthors() {
-        return AuthorDAO.getAllAuthors();
+        return authorDAO.getAllAuthors();
     }
     /**
      * TODO: Use the AuthorDAO to persist an author. The given Author will not have an id provided.
@@ -49,6 +50,8 @@ public class AuthorService {
      * @return The persisted author if the persistence is successful.
      */
     public Author addAuthor(Author author) {
-        return null;
+        return authorDAO.insertAuthor(author);
+         
+
     }
 }
